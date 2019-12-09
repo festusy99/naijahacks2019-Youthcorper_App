@@ -1,4 +1,4 @@
-**These are the list of UI/features**
+##These are the list of UI/features
 
 We will have 3 users, (Corp member, accommodation agent and Admin).
 The Corp member registers with all his necessary details including state of deployment and lga posted to.
@@ -8,4 +8,4 @@ The admin oversees everything on the platform.
 You can only register as a Corp member or as an agent
 Corp member can see all available accommodation and it's individual details including agent's contact details so he/she can place a call through to show interest in securing the house and negotiations.
 Verifiable Agent directory for security reasons for corpers safety
-Sale zone for any corper passing out wishing to sell his or her things to incoming corp member.
+Sale zone for any corper passing out wishing to sell his or her things to incoming corp member
