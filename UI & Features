@@ -1,0 +1,11 @@
+# These are the list of Features/UI
+
+We will have 3 users, (Corp member, accommodation agent and Admin).
+The Corp member registers with all his necessary details including state of deployment and lga posted to.
+The Corp member too will have the ability to search for accommodation by state or local govt.
+The Agent in charge of accomodation will register with all necessary details that can only upload vacant accommodation up for rent with location too.
+The admin oversees everything on the platform.
+You can only register as a Corp member or as an agent
+Corp member can see all available accommodation and it's individual details including agent's contact details so he/she can place a call through to show interest in securing the house and negotiations.
+Verifiable Agent directory for security reasons for corpers safety
+Sale zone for any corper passing out wishing to sell his or her things to incoming corp member
