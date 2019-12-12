@@ -20,8 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('call_up')->unique();
+            $table->string('state_code')->unique();
             $table->string('avatar')->default('avatar.png');
-            $table->unsignedBigInteger('status_id');
+            $table->unsignedBigInteger('status_id')->default('1');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

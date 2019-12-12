@@ -21,6 +21,8 @@ class RegisterController extends BaseController
             'full_name' => 'required',
             'username' => 'required',
             'email' => 'required|email',
+            'call_up' => 'required',
+            'state_code' => 'required',
             'password' => 'required',
             'c_password' => 'required|same:password',
         ]);
@@ -35,6 +37,8 @@ class RegisterController extends BaseController
         $success['token'] =  $user->createToken('MyApp')->accessToken;
         $success['full_name'] =  $user->full_name;
         $success['username'] =  $user->username;
+        $success['call_up'] =  $user->call_up;
+        $success['state_code'] =  $user->state_code;
    
         return $this->sendResponse($success, 'User registered successfully.');
     }
