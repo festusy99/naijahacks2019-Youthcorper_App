@@ -83,7 +83,7 @@ class LodgeController extends BaseController
             'description' => 'required',
             'state' => 'required',
             'local_govt' => 'required',
-            'address' => 'required',
+            'address' => 'required'
         ]);
    
         if($validator->fails()){

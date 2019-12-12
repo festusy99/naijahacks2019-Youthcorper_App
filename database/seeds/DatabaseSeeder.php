@@ -12,11 +12,28 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users_statuses')->insert([
-            ['status' => 'active',
+            ['status' => 'Active',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ],
-            ['status' => 'blocked',
+            ['status' => 'Blocked',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            ['status' => 'Verified',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ]
+        ]);
+
+        DB::table('user_types')->insert([
+            [
+                'type' => 'Corp Member',
+                'created_at' => date('Y-m-d h:i:s'),
+                'updated_at' => date('Y-m-d h:i:s')
+            ],
+            [
+                'type' => 'Lodge Agent',
                 'created_at' => date('Y-m-d h:i:s'),
                 'updated_at' => date('Y-m-d h:i:s')
             ]
