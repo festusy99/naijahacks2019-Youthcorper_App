@@ -9706,6 +9706,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .masthead .masthead-heading {
+  margin: 5%;
   font-size: 2.75rem;
   line-height: 2.75rem;
 }
@@ -9859,4 +9860,13 @@ form .row:first-child .floating-label-form-group {
   color: #fff;
   text-decoration: none;
   background-color: #1abc9c !important;
+}
+
+header{
+  background-image: url("https://dailypost.ng/wp-content/uploads/2019/06/NYSC.jpeg");
+  background-color: #1abc9c;
+  background-blend-mode: darken;
+  min-width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
