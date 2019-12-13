@@ -8,7 +8,11 @@ It is truly a serious matter. Corps members have been grappling with the problem
 
 ## Connection
 We sat down as a team to think on possible ways and idea towards solving problems in our community and country as a whole because we are aware of the fear imposed on individual when they are been deployed outside of their state and with this new innovation we are sure it will bridge he gap and tension faced by Youth Corpers in terms of;
+
 i) Connecting to others in outside state
+
 ii) Accommodations for individuals with comfort and safety in mind
+
 iii) Corpers Trade zone is a feature where out going/passing out corpers can trade with new incoming ones hassle free.
+
 We at Team(w4tchnl3rn)  are inspired to learning and willing to face greater challenges hereby providing EDU-INNOVATION, Solving major problems encountered by thousands of graduates from various institutions across Nigeria and beyond
