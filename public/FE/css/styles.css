@@ -9847,3 +9847,16 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
+/* account */
+.account{
+  background: #fff;
+  margin: 5%;
+  padding: 2%;
+}
+
+.form-submit{
+  color: #fff;
+  text-decoration: none;
+  background-color: #1abc9c !important;
+}
