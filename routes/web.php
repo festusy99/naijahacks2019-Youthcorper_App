@@ -16,5 +16,9 @@
 // });
 
 Route::get('/', function () {
-    return view('home');
+    return view('homepage');
 });
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');
