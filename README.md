@@ -1,4 +1,4 @@
-# Youth Corpers (Connect and Accommodation)
+# Youth Corpers Commect (Connect and Accommodation)
 Providing innovation & solution for Nigeria Youth Corpers in terms of Accommodation, mobility and inter state connect
 
 ## Accommodation
