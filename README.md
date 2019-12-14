@@ -1,4 +1,4 @@
-# naijahacks2019-Youthcorpers_Web_App
+# naijahacks2019-Youth Corpers (Connect and Accommodation)
 Providing innovation/solution for Nigeria Youth Corpers in terms of Accommodation, mobility and inter state connect
 
 ## Accommodation
