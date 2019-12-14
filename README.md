@@ -1,5 +1,5 @@
 # Youth Corpers (Connect and Accommodation)
-Providing innovation/solution for Nigeria Youth Corpers in terms of Accommodation, mobility and inter state connect
+Providing innovation & solution for Nigeria Youth Corpers in terms of Accommodation, mobility and inter state connect
 
 ## Accommodation
 For those who get posted to states outside their states of residence, accommodation can be a big problem with other basic needs.
