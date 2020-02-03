@@ -7572,6 +7572,10 @@ button.bg-dark:focus {
   text-align: left !important;
 }
 
+#details pre{
+  text-align: left !important;
+}
+
 .ml-5,
 .mx-5 {
   margin-left: 3rem !important;
