@@ -101,82 +101,79 @@
         <div class="divider-custom-line"></div>
       </div>
 
+      
       <!-- Apartment Grid Items -->
       <div class="row">
 
-        <!-- Apartment Item 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-          </div>
+                
+@forelse ($lodges as $lodge)
+  <!-- Apartment Item 1 -->
+  <div class="col-md-6 col-lg-4">
+    <div class="portfolio-item mx-auto" data-toggle="modal" id="getLodge" data-target="#lodge" data-url="" href="#">
+      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+        <div class="portfolio-item-caption-content text-center text-white">
+          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
         </div>
-
-        <!-- Apartment Item 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-          </div>
-        </div>
-
-        <!-- Apartment Item 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="http://media.graytvinc.com/images/wcjb_apartment-living-room.jpg" alt="">
-          </div>
-        </div>
-
-        <!-- Apartment Item 4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://m.foolcdn.com/media/millionacres/images/image1_BuYM1tG.width-1200.jpg" alt="">
-          </div>
-        </div>
-
-        <!-- Apartment Item 5 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-          </div>
-        </div>
-
-        <!-- Apartment Item 6 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-          </div>
-        </div>       
-         
       </div>
+      <img class="img-fluid" src="uploads/lodges/{{ $lodge->image }}" alt="">
+      <div">
+        <h6>{{ $lodge->lodge_name }}</h6>
+        <h6>{{ $lodge->lodge_type }}</h6>
+        <h6>{{ $lodge->price }}</h6>
+      </div">
+    </div>
+    
+  </div>
+@empty
+
+<div class="text-center">
+    No Lodges Yet
+</div>
+@endforelse
+
+       
+   
+</div>
+
+<!-- Apartment Modal 1 -->
+<div class="portfolio-modal modal fade" id="lodge" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+          </button>
+          <div class="modal-body text-center">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Apartment Modal - Title -->
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ $lodge->lodge_name }}</h2>
+                  <!-- Icon Divider -->
+                  <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                  </div>
+                  <!-- Apartment Modal - Image -->
+                  <img class="img-fluid rounded mb-5" src="uploads/lodges/{{ $lodge->image }}" alt="">
+                  <!-- Apartment Modal - Text -->
+                  <p class="mb-5"><i>{{ $lodge->description }}</i></p>
+                  <button class="btn btn-primary" href="#" data-dismiss="modal">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    Close Window
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
       <!-- /.row -->
 
       <h3 class="text-center">Find More <span><a href="apartments.html">Apartments</a></span></h3>
