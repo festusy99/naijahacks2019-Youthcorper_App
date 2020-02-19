@@ -18,6 +18,8 @@ class CreateLodgesTable extends Migration
             $table->string('lodge_name');
             $table->string('lodge_type');
             $table->text('description');
+            $table->string('image')->default('lodge.png');
+            $table->decimal('price', 10, 2);
             $table->string('state');
             $table->string('local_govt');
             $table->text('address');

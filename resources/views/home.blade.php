@@ -126,10 +126,7 @@
 
             <hr class="m-0" />
             <!-- add apartment -->
-            <section
-                class="resume-section p-3 p-lg-5 d-flex align-items-center"
-                id="add-apartment"
-            >
+            <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="add-apartment">
                 <div class="w-100">
                     <h2 class="mb-5">Add New Apartment</h2>
                     <!-- Add Apartment form -->
@@ -140,7 +137,22 @@
                                     method="POST"
                                     class="register-form"
                                     id="register-form"
+                                    action="{{ route('lodges.store') }}"
                                 >
+                                @csrf
+                                    <!-- apartment-name -->
+                                    <div class="form-group">
+                                        <label for="name"
+                                            ><i class="zmdi zmdi-home"></i
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            name="lodge_name"
+                                            id="apartment-name"
+                                            placeholder="Apartment name"
+                                        />
+                                    </div>
+
                                     <!-- apartment-type -->
                                     <div class="form-group">
                                         <label for="name"
@@ -148,16 +160,70 @@
                                         ></label>
                                         <input
                                             type="text"
-                                            name="apartment-type"
+                                            name="lodge_type"
                                             id="apartment-type"
                                             placeholder="Apartment Type (selfcon, one room, flat etc)"
                                         />
                                     </div>
 
-                                    <!-- address -->
+                                    <!-- description -->
+                                    <div class="form-group">
+                                        <label for="description"
+                                            ><i class="zmdi zmdi-home"></i
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            name="description"
+                                            id="description"
+                                            placeholder="Description"
+                                        />
+                                    </div>
+
+                                    <!-- price -->
+                                    <div class="form-group">
+                                        <label for="price"
+                                            ><i class="zmdi zmdi-home"></i
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            name="price"
+                                            id="price"
+                                            placeholder="Price/ Year"
+                                        />
+                                    </div>
+                                    
+                                    <!-- state -->
+                                    <div class="form-group">
+                                        <label for="state"
+                                            ><i class="zmdi zmdi-home"></i
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            name="state"
+                                            id="state"
+                                            placeholder="State"
+                                        />
+                                    </div>
+
+                                    <!-- local govt -->
+                                    <div class="form-group">
+                                        <label for="local_govt"
+                                            ><i class="zmdi zmdi-home"></i
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            name="local_govt"
+                                            id="local_govt"
+                                            placeholder="Local Government"
+                                        />
+                                    </div>
+
+                                    <!-- Address -->
                                     <div class="form-group">
                                         <label for="address"
-                                            ><i class="zmdi zmdi-home"></i
+                                            ><i
+                                                class="zmdi zmdi-account material-icons-name"
+                                            ></i
                                         ></label>
                                         <input
                                             type="text"
@@ -167,74 +233,23 @@
                                         />
                                     </div>
 
-                                    <!-- LandLord -->
+                                    <!-- Address -->
                                     <div class="form-group">
-                                        <label for="landlord"
+                                        <label for="agent-id"
                                             ><i
                                                 class="zmdi zmdi-account material-icons-name"
                                             ></i
                                         ></label>
                                         <input
                                             type="text"
-                                            name="landlord"
-                                            id="landlord"
-                                            placeholder="LandLord"
+                                            name="agent_id"
+                                            id="agent-id"
+                                            placeholder="Agent ID"
                                         />
                                     </div>
 
-                                    <!-- Agent -->
-                                    <div class="form-group">
-                                        <label for="agent"
-                                            ><i
-                                                class="zmdi zmdi-account material-icons-name"
-                                            ></i
-                                        ></label>
-                                        <input
-                                            type="text"
-                                            name="agent"
-                                            id="agent"
-                                            placeholder="Agent (optional)"
-                                        />
-                                    </div>
 
-                                    <!-- Price/year -->
-                                    <div class="form-group">
-                                        <label for="price"
-                                            ><i class="zmdi zmdi-money"></i
-                                        ></label>
-                                        <input
-                                            type="text"
-                                            name="price"
-                                            id="price"
-                                            placeholder="Price/Year"
-                                        />
-                                    </div>
-
-                                    <!-- Contact 1 -->
-                                    <div class="form-group">
-                                        <label for="contact 1"
-                                            ><i class="zmdi zmdi-phone"></i>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="contact 1"
-                                            id="contact 1"
-                                            placeholder="Contact 1"
-                                        />
-                                    </div>
-
-                                    <!-- Contact 2 -->
-                                    <div class="form-group">
-                                        <label for="contact 2">
-                                            <i class="zmdi zmdi-phone"></i>
-                                        </label>
-                                        <input
-                                            type="text"
-                                            name="contact 2"
-                                            id="contact 2"
-                                            placeholder="Contact 2"
-                                        />
-                                    </div>
+                                    
 
                                     <div class="form-group">
                                         <input
@@ -279,81 +294,41 @@
           
                 <!-- Apartment Grid Items -->
                 <div class="row">
-          
+
+                
+                @forelse ($lodges as $lodge)
                   <!-- Apartment Item 1 -->
                   <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" id="getLodge" data-target="#lodge" data-url="" href="#">
                       <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                           <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
                         </div>
                       </div>
-                      <img class="img-fluid" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
+                      <img class="img-fluid" src="uploads/lodges/{{ $lodge->image }}" alt="">
+                      <div">
+                        <h6>{{ $lodge->lodge_name }}</h6>
+                        <h6>{{ $lodge->lodge_type }}</h6>
+                        <h6>{{ $lodge->price }}</h6>
+                      </div">
                     </div>
+                    
                   </div>
+                @empty
+
+                <div class="text-center">
+                    No Lodges Yet
+                </div>
+                @endforelse
           
-                  <!-- Apartment Item 2 -->
-                  <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <img class="img-fluid" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-                    </div>
-                  </div>
-          
-                  <!-- Apartment Item 3 -->
-                  <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <img class="img-fluid" src="http://media.graytvinc.com/images/wcjb_apartment-living-room.jpg" alt="">
-                    </div>
-                  </div>
-          
-                  <!-- Apartment Item 4 -->
-                  <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <img class="img-fluid" src="https://m.foolcdn.com/media/millionacres/images/image1_BuYM1tG.width-1200.jpg" alt="">
-                    </div>
-                  </div>
-          
-                  <!-- Apartment Item 5 -->
-                  <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <img class="img-fluid" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-                    </div>
-                  </div>
-          
-                  <!-- Apartment Item 6 -->
-                  <div class="col-md-6 col-lg-4">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                      <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                          <i class="fa fa-plus" fa-lg aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <img class="img-fluid" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-                    </div>
-                  </div>       
+                       
                    
                 </div>
                 <!-- /.row -->
+                
+                
+
+                
           
               </div>
             </section>
@@ -361,7 +336,7 @@
             <!-- Apartment Modals -->
 
   <!-- Apartment Modal 1 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="lodge" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -374,7 +349,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8">
                   <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
+                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ $lodge->lodge_name }}</h2>
                   <!-- Icon Divider -->
                   <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -384,9 +359,9 @@
                     <div class="divider-custom-line"></div>
                   </div>
                   <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
+                  <img class="img-fluid rounded mb-5" src="uploads/lodges/{{ $lodge->image }}" alt="">
                   <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                  <p class="mb-5"><i>{{ $lodge->description }}</i></p>
                   <button class="btn btn-primary" href="#" data-dismiss="modal">
                     <i class="fa fa-times" aria-hidden="true"></i>
                     Close Window
@@ -397,202 +372,33 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
+
+  <!-- $(document).on('click', '#getLodge', function(e){
+        e.preventDefault();
+        var url = $(this).data('url');
+        $('.portfolio-modal').html(''); 
+        $('#modal-loader').show();     
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html'
+        })
+        .done(function(data){
+           // console.log(data);  
+            $('.portfolio-modal').html('');    
+            $('.portfolio-modal').html(data); // load response 
+            $('#modal-loader').hide();        // hide ajax loader   
+        })
+        .fail(function(){
+            $('#dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+            $('#modal-loader').hide();
+        });
+    }); -->
+
+
+
   
-    <!-- Apartment Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </button>
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-                  <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                  <button class="btn btn-primary" href="#" data-dismiss="modal">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Close Window
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Apartment Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </button>
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="http://media.graytvinc.com/images/wcjb_apartment-living-room.jpg" alt="">
-                  <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                  <button class="btn btn-primary" href="#" data-dismiss="modal">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Close Window
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Apartment Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </button>
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="https://m.foolcdn.com/media/millionacres/images/image1_BuYM1tG.width-1200.jpg" alt="">
-                  <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                  <button class="btn btn-primary" href="#" data-dismiss="modal">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Close Window
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Apartment Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </button>
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="">
-                  <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                  <button class="btn btn-primary" href="#" data-dismiss="modal">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Close Window
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Apartment Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </span>
-          </button>
-          <div class="modal-body text-center">
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-8">
-                  <!-- Apartment Modal - Title -->
-                  <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                  <!-- Icon Divider -->
-                  <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                  </div>
-                  <!-- Apartment Modal - Image -->
-                  <img class="img-fluid rounded mb-5" src="https://media.gettyimages.com/photos/living-room-picture-id908753266?s=612x612" alt="">
-                  <!-- Apartment Modal - Text -->
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                  <button class="btn btn-primary" href="#" data-dismiss="modal">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                    Close Window
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
             <hr class="m-0" />
         </div>
 

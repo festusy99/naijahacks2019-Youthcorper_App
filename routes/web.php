@@ -15,10 +15,17 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('homepage');
-});
+// Route::get('/', function () {
+//     return view('homepage');
+// });
+
+Route::get('/', 'indexController@landingPage');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('lodges','LodgeController');
+
+Route::get('lodge/{id}','HomeController@getLodge');

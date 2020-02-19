@@ -12,7 +12,7 @@ class Lodge extends Model
      * @var array
      */
     protected $fillable = [
-        'lodge_name', 'lodge_type', 'description', 'state', 'local_govt', 'address', 'agent_id'
+        'lodge_name', 'lodge_type', 'description', 'image', 'price', 'state', 'local_govt', 'address', 'agent_id'
     ];
 
     public function user() {
