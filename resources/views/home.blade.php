@@ -309,7 +309,7 @@
                       <div">
                         <h6>{{ $lodge->lodge_name }}</h6>
                         <h6>{{ $lodge->lodge_type }}</h6>
-                        <h6>{{ $lodge->price }}</h6>
+                        <h6>&#8358 {{ $lodge->price }}</h6>
                       </div">
                     </div>
                     
